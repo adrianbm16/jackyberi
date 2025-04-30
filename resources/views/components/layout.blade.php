@@ -7,8 +7,18 @@
     <title> {{ $title ?? 'jackyberi' }} </title>
 </head>
 <body>
-
-    <h1>Jackyberi</h1>
+    <header>
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/shop">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     {{ $slot }}
 
 </body>

@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{ $title ?? 'jackyberi' }} </title>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <header>
-        <h1>Header</h1>
+        <div class="logo">
+            <a href="/">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo">
+            </a>
+        </div>
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -18,7 +23,7 @@
             </ul>
         </nav>
     </header>
-    
+
     {{ $slot }}
 
 </body>

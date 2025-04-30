@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jackyberi</title>
-</head>
-<body>
-    <h1>Jackyberi</h1>
-</body>
-</html>
+<x-layout>
+    
+    <x-slot:title> Home </x-slot> <!-- Titulo de la pagina -->
+
+    <div class="content">
+        <h1>Welcome to the Home Page</h1>
+        <p>This is the content of the home page.</p>
+    </div>
+
+</x-layout>
+

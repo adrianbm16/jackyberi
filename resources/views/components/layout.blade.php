@@ -9,12 +9,17 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo">
-            </a>
-        </div>
+        <a href="/"><img class="logo" src="{{ asset('images/logo.png') }}" alt="Logo"></a>
+        <button class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
         <nav>
+            <button class="close-menu" id="close-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/gallery">Gallery</a></li>
@@ -22,6 +27,7 @@
                 <li><a href="/shop">Shop</a></li>
             </ul>
         </nav>
+        
     </header>
 
     {{ $slot }}

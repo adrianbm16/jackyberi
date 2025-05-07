@@ -1,0 +1,27 @@
+/* -------------------------------------------CONTENT--------------------------------------------------- */
+
+.content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+}
+
+.row {
+    height: 200vh;
+    margin: auto;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.column {
+    flex: 25%;
+    padding: 5px;
+    height: 100%;
+}

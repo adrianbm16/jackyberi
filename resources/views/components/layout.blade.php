@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{ $title ?? 'jackyberi' }} </title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/gallery.css') }}">
+    {{ $styles ?? '' }}
 </head>
 <body>
     <header>
@@ -26,6 +27,15 @@
     </header>
 
     {{ $slot }}
+
+    <footer>
+        <p>&copy; 2023 jackyberi. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/jacky.beri/"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+        </div>
+    </footer>
 
     <script src="{{ asset('js/app.js') }}"></script>
 </body>

@@ -80,3 +80,20 @@ header {
 
 
 /* -------------------------------------------FOOTER--------------------------------------------------- */
+
+footer {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer a {
+    color: #eeeeee;
+    padding-left: 1rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+}

@@ -7,7 +7,6 @@ body {
     margin-top: 15vh;
     /* height: 2000px; */
 }
-
 header {
     position: fixed;
     display: flex;
@@ -18,30 +17,27 @@ header {
     top: 0;
     right: 0;
     left: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
 }
-
 .logo {
     max-width: 4rem;
 }
-
 .nav-list {
     list-style-type: none;
     display: flex;
     padding-right: 1rem;
     gap: 2rem;
 }
-
 .nav-list li a {
     color: black;
     font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
 }
-
 .nav-list li a:hover {
     text-decoration: underline;
 }
-
 .abrir-menu, .cerrar-menu {
     display: none;
     cursor: pointer;
@@ -55,7 +51,6 @@ header {
         background: none;
         font-size: 2rem;
     }
-
     .nav {
         opacity: 0;
         visibility: hidden;
@@ -68,24 +63,20 @@ header {
         right: 0;
         background-color: #ffffff;
         padding: 1rem;
-        margin-top: 1rem;
+        padding-top: 2rem;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        border-radius: 0 0 0 0.4rem;
     }
-
     .nav.visible {
         opacity: 1;
         visibility: visible;
     }
-
     .nav-list {
         flex-direction: column;
         align-items: end;
     }
-    
+
 }
-
-
-
-
 
 
 /* -------------------------------------------FOOTER--------------------------------------------------- */

@@ -1,49 +1,59 @@
-body {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #cecece;
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    margin-top: 15vh;
-    /* height: 2000px; */
 }
+
+body {
+    background-color: #fafafa;
+}
+
 header {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #fafafa;
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    background-color: #ffffff;
+    height: 5rem;
+    padding: 0 3rem;
     top: 0;
     right: 0;
     left: 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     z-index: 1000;
 }
+
 .logo {
-    max-width: 4rem;
+    height: 3rem;
 }
+
 .nav-list {
     list-style-type: none;
     display: flex;
-    padding-right: 1rem;
     gap: 2rem;
 }
+
 .nav-list li a {
     color: black;
-    font-size: 20px;
+    font-size: 1.1rem;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
 .nav-list li a:hover {
     text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
 }
+
 .abrir-menu, .cerrar-menu {
     display: none;
     cursor: pointer;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     
     .abrir-menu, .cerrar-menu {
         display: block;
@@ -51,6 +61,11 @@ header {
         background: none;
         font-size: 2rem;
     }
+    
+    .cerrar-menu {
+        margin-right: 2rem;
+    }
+
     .nav {
         opacity: 0;
         visibility: hidden;
@@ -61,16 +76,18 @@ header {
         position: absolute;
         top: 0;
         right: 0;
-        background-color: #ffffff;
+        background-color: #fafafa;
         padding: 1rem;
         padding-top: 2rem;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         border-radius: 0 0 0 0.4rem;
     }
+
     .nav.visible {
         opacity: 1;
         visibility: visible;
     }
+
     .nav-list {
         flex-direction: column;
         align-items: end;
@@ -82,10 +99,11 @@ header {
 /* -------------------------------------------FOOTER--------------------------------------------------- */
 
 footer {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #1f1f1f;
-    color: #ffffff;
-    padding: 1rem 2rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    color: #fafafa;
+    padding: 0.5rem 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     align-items: center;

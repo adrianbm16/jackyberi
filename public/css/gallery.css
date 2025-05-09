@@ -1,12 +1,27 @@
 /* -------------------------------------------CONTENT--------------------------------------------------- */
 
+body {
+    background-image: url('../images/george-pagan-iii-dDmU72yV7g0-unsplash.jpg');
+    background-size: cover;
+    background-attachment: fixed
+}
+
 .content {
-    background-color: #f9f9f9;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: #fafafa;
     width: 75%;
-    padding: 20px;
-    margin: 20px auto;
-    border-radius: 0.4rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    padding:  2rem;
+    margin: 7rem auto;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.content h1 {
+    font-size: 2rem;
+    padding-left: 2rem;
+    letter-spacing: -1px;
+    word-spacing: 2px;
+    margin: 0;
 }
 
 
@@ -14,49 +29,31 @@
     width: 100%;
     height: auto;
     margin-top: 1rem;
-    border-radius: 0.4rem;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
+
 .gallery-img:hover {
     transform: scale(1.01);
-    transition: transform 0.3s ease;
+    transition: all 0.2s ease-in-out;
+    filter: brightness(0.8);
 }
+
 .row {
-    margin: auto;
     display: flex;
     margin-bottom: 25px;
 }
+
 .column {
-    flex: 25%;
+    flex: 50%;
     padding: 0.5rem;
     flex-wrap: wrap;
+    flex-grow: var();
 }
+
 @media screen and (max-width: 1080px) {
     .column {
         flex: 50%;
     }
     
 }
-
-
-/* .column {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-content: space-evenly;
-    flex-wrap: wrap;
-    height: 2000px;
-    gap: 1rem;
-} 
-.gallery-img {
-    min-width: 32%;
-    max-width: 32%;
-    height: auto;
-    border-radius: 0.4rem;
-    object-fit: cover; 
-}
-@media screen and (max-width: 1300px) {
-    .gallery-img {
-        max-width: 49%;
-    }
-} */

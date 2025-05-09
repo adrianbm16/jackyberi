@@ -29,7 +29,7 @@
     {{ $slot }}
 
     <footer>
-        <p>&copy; 2023 jackyberi. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} jackyberi. All rights reserved.</p>
         <div class="social-icons">
             <a href="#"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/jacky.beri/"><i class="bi bi-instagram"></i></a>

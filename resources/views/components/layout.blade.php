@@ -36,7 +36,6 @@
             <a href="#"><i class="bi bi-youtube"></i></a>
         </div>
     </footer>
-
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

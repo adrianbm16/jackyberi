@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100..900&display=swap');
 
-/* -------------------------------------------CONTENT--------------------------------------------------- */
-
 body {
-    background-image: url('../images/george-pagan-iii-dDmU72yV7g0-unsplash.jpg');
+    background-image: url('../images/gallery.jpg');
     background-size: cover;
     background-attachment: fixed
 }
+
+
+/* -------------------------------------------CONTENT--------------------------------------------------- */
 
 .content {
     background-color: #fafafa;
@@ -20,7 +21,7 @@ body {
 .content h1 {
     font-family: "Exo 2", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     font-size: 2.4rem;
     padding: 0 0 1rem 2rem;

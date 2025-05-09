@@ -5,8 +5,12 @@
 }
 
 body {
+    scroll-behavior: smooth;
     background-color: #fafafa;
 }
+
+
+/* -------------------------------------------------------- HEADER -------------------------------------------------------------- */
 
 header {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -97,7 +101,7 @@ header {
 }
 
 
-/* -------------------------------------------FOOTER--------------------------------------------------- */
+/* -------------------------------------------------------- FOOTER -------------------------------------------------------------- */
 
 footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;

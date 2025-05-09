@@ -7,8 +7,14 @@
     </x-slot>
 
     <div class="content">
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the content of the home page.</p>
+        <div class="hero">
+            <h1 class="title">Jackyberi</h1>
+        </div>
+        <div class="about">
+            <h2>About Us</h2>
+            <img src="{{ asset('images/retrato.jpg') }}" alt="Logo">
+            <p>Welcome to our website! We are dedicated to providing the best service possible.</p>
+        </div>
     </div>
 
 </x-layout>

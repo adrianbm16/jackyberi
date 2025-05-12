@@ -60,7 +60,7 @@ header.scrolled {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 6rem;
+    gap: 7rem;
 }
 
 .about-container img {
@@ -69,12 +69,13 @@ header.scrolled {
 }
 
 .about-text {
-    font-family: var(--main-font);
-    font-size: 1.2rem;
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 30%;
+    width: 25%;
     gap: 2rem;
 }
 

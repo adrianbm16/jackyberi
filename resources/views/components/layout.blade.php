@@ -19,8 +19,8 @@
             <ul class="nav-list">
                 <li><a href="/">Home</a></li>
                 <li><a href="/gallery">Gallery</a></li>
-                <li><a href="/contact">Contact</a></li>
                 <li><a href="/shop">Shop</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
         
@@ -29,11 +29,19 @@
     {{ $slot }}
 
     <footer>
-        <p>&copy; {{ date('Y') }} jackyberi. All rights reserved.</p>
+        <p class="copyright">&copy; {{ date('Y') }} jackyberi. All rights reserved.</p>
+
+        <div class="mention">
+            <p>With the help of</p>
+            <a href="https://freepik.es" target="_blank">
+                <img src="{{ asset('images/Freepik logo.png') }}" alt="Freepik Logo">
+            </a>
+        </div>
+
         <div class="social-icons">
-            <a href="#"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/jacky.beri/"><i class="bi bi-instagram"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/jacky.beri/" target="_blank"><i class="bi bi-instagram"></i></a>
+            <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
         </div>
     </footer>
     <script src="{{ asset('js/app.js') }}"></script>

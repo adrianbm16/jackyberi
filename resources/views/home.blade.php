@@ -14,8 +14,8 @@
             <div class="about-container">
                 <img src="{{ asset('images/retrato.jpg') }}" alt="Logo">
                 <div class="about-text">
-                    <h2>Jacky Bernal Rivero</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nulla eius placeat vel molestias odio, eos atque blanditiis neque modi ipsum libero inventore dolores qui et? Dolor sint sequi voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum provident amet delectus minus eaque recusandae eum quidem ex praesentium sunt?</p>
+                    <h2>Jacky Bernal</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nulla eius placeat vel molestias odio, eos atque blanditiis neque modi ipsum libero inventore dolores consectetur adipisicing elit.</p>
                 </div>
             </div>
         </div>

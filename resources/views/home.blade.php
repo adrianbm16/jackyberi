@@ -11,9 +11,13 @@
             <h1 class="title">Jackyberi</h1>
         </div>
         <div class="about">
-            <h2>About Us</h2>
-            <img src="{{ asset('images/retrato.jpg') }}" alt="Logo">
-            <p>Welcome to our website! We are dedicated to providing the best service possible.</p>
+            <div class="about-container">
+                <img src="{{ asset('images/retrato.jpg') }}" alt="Logo">
+                <div class="about-text">
+                    <h2>Jacky Bernal Rivero</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nulla eius placeat vel molestias odio, eos atque blanditiis neque modi ipsum libero inventore dolores qui et? Dolor sint sequi voluptate. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum provident amet delectus minus eaque recusandae eum quidem ex praesentium sunt?</p>
+                </div>
+            </div>
         </div>
     </div>
 

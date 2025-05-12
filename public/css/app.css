@@ -1,3 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100..900&display=swap');
+
+/* -------------------------------------------------------- GLOBAL STYLES -------------------------------------------------------------- */
+
+:root {
+    --background-white: #fafafa;
+    --title-font: 'Exo 2', sans-serif;
+    --main-font: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,15 +16,15 @@
 
 body {
     scroll-behavior: smooth;
-    background-color: #fafafa;
+    background-color: var(--background-white);
 }
 
 
 /* -------------------------------------------------------- HEADER -------------------------------------------------------------- */
 
 header {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #fafafa;
+    font-family: var(--main-font);
+    background-color: var(--background-white);
     position: fixed;
     display: flex;
     align-items: center;
@@ -44,12 +54,23 @@ header {
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
 }
 
-.nav-list li a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 2px;
+/* Genera una linea debajo de cada enlace a otra pagina del nav */
+.nav-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px; 
+    background-color: black; 
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
 }
 
 .abrir-menu,
@@ -82,7 +103,7 @@ header {
         position: absolute;
         top: 0;
         right: 0;
-        background-color: #fafafa;
+        background-color: var(--background-white);
         padding: 2rem 1rem 2rem 2rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         border-radius: 0 0 0 0.4rem;
@@ -104,9 +125,9 @@ header {
 /* -------------------------------------------------------- FOOTER -------------------------------------------------------------- */
 
 footer {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--title-font);
     background-color: #1f1f1f;
-    color: #fafafa;
+    color: #eeeeee;
     padding: 0.5rem 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;

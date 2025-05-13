@@ -9,11 +9,27 @@
     <div class="content">
         <h1>Welcome to the Gallery</h1>
 
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+            <div id="caption"></div>
+        </div>
+
         <div class="row">
             <div class="column">
-                <img class="gallery-img" src="{{ asset('images/gallery/img1.jpg') }}" alt="Image 1">
-                <img class="gallery-img" src="{{ asset('images/gallery/img2.jpg') }}" alt="Image 2">
-                <img class="gallery-img" src="{{ asset('images/gallery/img6.jpg') }}" alt="Image 6">
+                <div>
+                    <img class="gallery-img" src="{{ asset('images/gallery/img1.jpg') }}" alt="Image 1">
+                    <p class="img-caption">Imagen 1</p>
+                </div>
+                <div>
+                    <img class="gallery-img" src="{{ asset('images/gallery/img2.jpg') }}" alt="Image 2">
+                    <p class="img-caption">Imagen 2</p>
+                </div>
+                <div>
+                    <img class="gallery-img" src="{{ asset('images/gallery/img6.jpg') }}" alt="Image 3">
+                    <p class="img-caption">Imagen 3</p>
+                </div>
             </div>
             <div class="column">
                 <img class="gallery-img" src="{{ asset('images/gallery/img4.jpg') }}" alt="Image 4">
@@ -35,6 +51,34 @@
 
     </div>
 
-    
+    <script>
+        // Obtener elementos del modal
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImg");
+        const captionText = document.getElementById("caption");
+        const closeBtn = document.querySelector(".close");
+
+        // Agregar evento a cada imagen
+        document.querySelectorAll(".gallery-img").forEach(img => {
+            img.addEventListener("click", function () {
+                modal.style.display = "block"; // Mostrar el modal
+                modalImg.src = this.src; // Establecer la imagen en el modal
+                captionText.innerHTML = this.alt; // Establecer el texto del caption
+            });
+        });
+
+        // Cerrar el modal al hacer clic en el botón de cerrar
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // Cerrar el modal al hacer clic fuera de la imagen
+        modal.onclick = function (e) {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
+
 
 </x-layout>

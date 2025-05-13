@@ -11,7 +11,7 @@
 
         <p class="text1">For any inquiries, please fill out the form below and we will get back to you as soon as possible.</p>
 
-        <p class="text2">Or you can send the email direct to <a>jacky.beri67@gmail.com</a></p>
+        <p class="text2">Or you can send the email direct to <a href="">jacky.beri67@gmail.com</a></p>
 
         <form action="/contact" method="post" id="contact_form">
             @csrf

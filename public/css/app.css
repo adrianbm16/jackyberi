@@ -151,6 +151,12 @@ footer {
 
 .mention img{
     height: 0.8rem;
+    filter: grayscale(100%) brightness(0) sepia(1) hue-rotate(200deg) saturate(5) contrast(1.2);
+    transition: filter 0.3s ease-in-out;
+}
+
+.mention img:hover {
+    filter: none; /* Vuelve al color original al pasar el ratón */
 }
 
 footer div a {

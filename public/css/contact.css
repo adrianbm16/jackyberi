@@ -29,7 +29,6 @@
 
 .text2 {
     font-weight: 600;
-    margin-bottom: 2.5rem;
 }
 
 .text2 a {
@@ -64,17 +63,21 @@
     width: 60%;
 }
 
+/* Hace que los input name y number esten en la misma linea */
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 .name {
-    float: left;
     width: 45%;
 }
 
-.email {
-    float: right;
+.number {
     width: 45%;
 }
 
-.telephone {
+.email{
     width: 100%;
 }
 
@@ -92,8 +95,8 @@ textarea {
     background: none;
     border: none;
     width: 100%;
-    margin-bottom: 1.8rem;
-    padding: 0.6rem 0;
+    margin-bottom: 1.5rem;
+    padding: 1rem 0 0.6rem 0;
     border-bottom: solid 1px #474544;
     color: #474544;
     font-size: 1rem;
@@ -134,4 +137,15 @@ textarea:focus::placeholder {
 .submit input:hover {
     background: #474544;
     color: #F2F3EB;
+}
+
+.input-container {
+    position: relative;
+}
+
+.error p {
+    font-family: var(--text-font);
+    font-size: 1rem;
+    position: absolute;
+    bottom: 0;
 }

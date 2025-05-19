@@ -13,7 +13,7 @@
 
         <p class="text2">Or you can send the email direct to <a href="">jacky.beri67@gmail.com</a></p>
 
-        <form action="/contact" method="post" id="contact_form">
+        <form action="/contact" method="get" id="contact_form">
             @csrf
             <div class="name">
                 <input type="text" placeholder="NAME" name="name" id="name_input" required>

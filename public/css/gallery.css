@@ -53,6 +53,7 @@ body {
     animation: zoomIn 0.3s ease; /* Animación de zoom */
 }
 
+/* Animación de zoom */
 @keyframes zoomIn {
     from {
         transform: scale(0.8);
@@ -87,8 +88,6 @@ body {
 .close:hover {
     color: #ccc;
 }
-
-
 
 .row {
     display: flex;

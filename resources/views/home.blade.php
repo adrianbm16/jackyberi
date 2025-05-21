@@ -7,10 +7,16 @@
     </x-slot>
 
     <div class="content">
+
+        <!-- Header -->
         <div class="hero">
             <h1 class="title">Jackyberi</h1>
         </div>
+
+        <!-- Main content -->
         <div class="about">
+
+            <!-- Contenido principal -->
             <div class="about-container">
                 <img src="{{ asset('images/retrato.jpg') }}" alt="Logo">
                 <div class="about-text">
@@ -18,7 +24,9 @@
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nulla eius placeat vel molestias odio, eos atque blanditiis neque modi ipsum libero inventore dolores consectetur adipisicing elit.</p>
                 </div>
             </div>
+
         </div>
+        
     </div>
 
 </x-layout>

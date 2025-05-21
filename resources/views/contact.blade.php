@@ -9,14 +9,14 @@
     <div class="content">
         <h1>Contact</h1>
 
-        <p class="text1">For any inquiries, please fill out the form below and we will get back to you as soon as
-            possible.</p>
-
+        <p class="text1">For any inquiries, please fill out the form below and we will get back to you as soon as possible.</p>
         <p class="text2">Or you can send the email direct to <a href="">jacky.beri67@gmail.com</a></p>
 
+        <!-- Formulario de contacto -->
         <form action="{{ route('contact.store') }}" method="POST" id="contact_form">
             @csrf
-            
+
+            <!-- Apartado de nombre y numero con sus respectivos mensajes de error -->
             <div class="flex">
                 <div class="name input-container">
                     <input type="text" placeholder="NAME" name="name" id="name_input" value="{{ old('name') }}">
@@ -33,6 +33,7 @@
                 </div>
             </div>
 
+            <!-- Apartado de email con su mensaje de error -->
             <div class="email input-container">
                 <input type="email" placeholder="EMAIL" name="email" id="email_input" value="{{ old('email') }}">
                 @error('email')
@@ -40,6 +41,7 @@
                 @enderror
             </div>
 
+            <!-- Apartado de asunto con su mensaje de error -->
             <div class="subject input-container">
                 <input type="text" placeholder="SUBJECT" name="subject" id="subject_input" value="{{ old('subject') }}">
                 @error('subject')
@@ -47,6 +49,7 @@
                 @enderror
             </div>
 
+            <!-- Apartado de mensaje con su mensaje de error -->
             <div class="message input-container">
                 <textarea name="message" placeholder="MESSAGE" id="message_input" cols="30" rows="5">{{ old('message') }}</textarea>
                 @error('message')

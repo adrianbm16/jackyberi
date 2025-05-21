@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- Estos son los datos que se envian por correo a jackyberi67@gmail.com desde el aparatado de contacto -->
+
     <h1>Contact Form Submission</h1>
 
     <p><strong>Name:</strong> {{ $data['name'] }}</p>

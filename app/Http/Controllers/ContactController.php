@@ -10,14 +10,15 @@ class ContactController extends Controller
 {
     public function index(Request $request)
     {
-        return view('contact');
+        return view('contact'); // Retorna la vista de contacto
     }
 
     public function store(Request $request)
     {
+        // Validación de los datos del formulario
         $request->validate([
-            'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/',
-            'number' => 'required|string|max:255|regex:/^\+?[0-9\s\-]+$/',
+            'name' => 'required|string|max:255|regex:/^[a-zA-Z\s]+$/', // Solo letras y espacios
+            'number' => 'required|string|max:255|regex:/^\+?[0-9\s\-]+$/', // Permite números, espacios y guiones
             'email' => 'required|email|max:255',
             'subject' => 'required|string|max:255',
             'message' => 'required|string|max:500|min:10',
@@ -31,11 +32,12 @@ class ContactController extends Controller
             'message.min' => 'The message must be at least 10 characters long.',
         ]);
 
+        // Envío del correo electrónico
         Mail::to('jackyberi67@gmail.com')
             ->send(new ContactMailable($request->all()));
 
-        session()->flash('success', 'Your message has been sent successfully!');
+        session()->flash('success', 'Your message has been sent successfully!'); // Mensaje de éxito
 
-        return redirect()->route('contact.index');
+        return redirect()->route('contact.index'); // Redirige a la página de contacto
     }
 }

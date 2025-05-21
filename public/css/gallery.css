@@ -98,7 +98,6 @@ body {
 
 .column {
     flex: 1 1 calc(25% - 1rem); /* Ocupa un cuarto del ancho de pantalla */
-    /* max-width: calc(25% - 1rem); */
 }
 
 .gallery-img {
@@ -130,13 +129,13 @@ body {
     z-index: 10000;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
     .column {
         flex: 1 1 calc(50% - 1rem); /* Ocupa la mitad del ancho en pantallas medianas */
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 800px) {
     .column {
         flex: 1 1 100%; /* Ocupa todo el ancho en pantallas pequeñas */
     }

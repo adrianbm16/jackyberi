@@ -7,8 +7,15 @@
     </x-slot>
 
     <div class="content">
-        <h1>Welcome to the Shop</h1>
-        <p>This is the content of the shop page.</p>
+
+        <div class="login">
+            <ul class="login-list">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                <li class="profile"><img src="" alt=""></li>
+            </ul>
+        </div>
+
     </div>
 
 </x-layout>

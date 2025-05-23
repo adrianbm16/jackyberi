@@ -1,11 +1,11 @@
 // -------------------------------------------- ALL --------------------------------------------
+
 /**
  * Este codigo activa y desactiva el menu de navegacion cuando el navegador es pequeño.
  * @param nav - El menu de navegacion.
  * @param abrir - El boton para abrir el menu de navegacion.
  * @param cerrar - El boton para cerrar el menu de navegacion.
  */
-
 const nav = document.querySelector("#nav");
 const abrir = document.querySelector("#abrir");
 const cerrar = document.querySelector("#cerrar");
@@ -19,13 +19,31 @@ cerrar.addEventListener("click", () => {
 })
 
 
+/**
+ * Este codigo activa y desactiva el menu de navegacion cuando el navegador es pequeño.
+ * @param admin - E
+ * @param login - El boton para abrir el menu de navegacion.
+ */
+const admin = document.querySelector("#admin");
+const login = document.querySelector("#login");
+
+login.addEventListener("click", () => {
+    if (admin.classList.contains("visible")) {
+        admin.classList.remove("visible");
+    } else {
+        admin.classList.add("visible");
+    }
+})
+
+
+
 // -------------------------------------------- HOME --------------------------------------------
+
 /**
  * Este codigo al bajar la pagina hace aparecer el navegador en la pagina de inicio.
  * @param header - El header de la pagina.
  * @param title - El titulo de la pagina.
  */
-
 document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector("header");
     const title = document.querySelector(".title");
@@ -51,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param captionText - El texto del caption.
  * @param closeBtn - El boton de cerrar el modal.
  */
-
 // Obtener elementos del modal
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");

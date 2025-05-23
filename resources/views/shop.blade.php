@@ -8,12 +8,27 @@
 
     <div class="content">
 
-        <div class="login">
-            <ul class="login-list">
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                <li class="profile"><img src="" alt=""></li>
-            </ul>
+        <div class="title">
+            <h1>Shop</h1>
+            <div class="admin" id="admin">
+                <button class="edit-image">Edit images</button>
+                <button class="add-image">Add image</button>
+            </div>
+        </div>
+
+        <div class="items">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
+            <img class="shop-item" src="{{ asset('images/hero.jpg') }}" alt="">
         </div>
 
     </div>

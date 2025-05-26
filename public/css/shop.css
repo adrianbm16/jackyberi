@@ -16,6 +16,7 @@ body {
 }
 
 /* ------------------------------ TITLE ------------------------------ */
+
 .title {
     display: flex;
     flex-direction: row;
@@ -49,24 +50,125 @@ body {
     background-color: #333333;
 }
 
-.admin {
-    opacity: 0;
-    visibility: hidden;
-}
+
 
 /* ------------------------------ SHOWCASE ------------------------------ */
 
-
 .items {
     display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Diseño responsivo */
     gap: 1rem;
+    padding: 1rem;
 }
 
+.item-text {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 .shop-item {
     width: 100%;
     height: auto;
     border-radius: 3px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.shop-item {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.shop-item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+}
+
+.shop-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.shop-item h4 {
+    font-family: var(--text-font);
+    font-size: 1.1rem;
+}
+
+.shop-item p {
+    font-family: var(--text-font);
+    font-size: 1rem;
+    color: #333;
+}
+
+/* -------------------- Modal -------------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: auto;
+    padding-top: 5rem;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#text {
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+}
+
+#text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+#text p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.buy-button {
+    background-color: #1f1f1f;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.buy-button:hover {
+    background-color: #333;
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ccc;
 }

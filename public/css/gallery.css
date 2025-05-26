@@ -18,7 +18,17 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.content h1 {
+
+/* ------------ Title ------------ */
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h1 {
     font-family: var(--title-font);
     font-optical-sizing: auto;
     font-weight: 700;
@@ -29,7 +39,24 @@ body {
     margin: 0;
 }
 
-/* ------ Modal ------ */
+.title button {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 2rem 1rem 0; 
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.title button:hover {
+    background-color: #333333;
+}
+
+
+/* ------------ Modal ------------ */
+
 .modal {
     display: none; /* Oculto por defecto */
     position: fixed;
@@ -88,6 +115,9 @@ body {
 .close:hover {
     color: #ccc;
 }
+
+
+/* ------------ Gallery ------------ */
 
 .row {
     display: flex;

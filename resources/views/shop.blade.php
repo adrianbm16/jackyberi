@@ -20,12 +20,14 @@
         <!-- Modal para abrir cada item-->
         <div id="itemModal" class="modal">
             <span class="close">&times;</span>
-            <img class="modal-content" id="modalImg">
-            <div id="text">
-                <h2 id="modalName"></h2>
-                <p id="modalPrice"></p>
-                <p id="modalDescription"></p>
-                <button class="buy-button">Buy</button>
+            <div class="modal-background">
+                <img class="modal-content" id="modalImg">
+                <div id="text">
+                    <h2 id="modalName"></h2>
+                    <p id="modalDescription"></p>
+                    <p id="modalPrice"></p>
+                    <button class="buy-button">Buy</button>
+                </div>
             </div>
         </div>
 

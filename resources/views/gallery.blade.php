@@ -10,7 +10,7 @@
 
         <!-- Titulo de la galeria y botones de edicion-->
         <div class="title">
-            <h1>Welcome to the Gallery</h1>
+            <h1>Gallery</h1>
             <div class="admin" id="admin">
                 <button class="edit-image">Edit images</button>
                 <button class="add-image">Add image</button>

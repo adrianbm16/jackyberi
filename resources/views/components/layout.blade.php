@@ -40,7 +40,7 @@
         <div class="mention"> <!-- Mencion a freepik -->
             <p>With the help of</p>
             <a href="https://freepik.es" target="_blank">
-                <img src="{{ asset('images/Freepik logo.png') }}" alt="Freepik Logo">
+                <img src="{{ asset('images/freepik logo.png') }}" alt="Freepik Logo">
             </a>
         </div>
 

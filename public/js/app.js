@@ -24,18 +24,19 @@ cerrar.addEventListener("click", () => {
  * @param admin - E
  * @param login - El boton para abrir el menu de navegacion.
  */
-const admin = document.querySelector("#admin");
+const admin = document.querySelectorAll("#admin");
 const login = document.querySelector("#login");
 
 login.addEventListener("click", () => {
-    if (admin.classList.contains("visible")) {
-        admin.classList.remove("visible");
-    } else {
-        admin.classList.add("visible");
-    }
+
+    admin.forEach(element => {
+        if (element.classList.contains("visible")) {
+            element.classList.remove("visible");
+        } else {
+            element.classList.add("visible");
+        }
+    });
 })
-
-
 
 // -------------------------------------------- HOME --------------------------------------------
 

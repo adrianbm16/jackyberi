@@ -39,7 +39,13 @@ body {
     margin: 0;
 }
 
-.title button {
+.admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin button {
     background-color: #1f1f1f;
     color: #ffffff;
     border: none;
@@ -47,77 +53,17 @@ body {
     margin: 0 2rem 1rem 0; 
     border-radius: 5px;
     cursor: pointer;
+    font-family: var(--text-font);
     font-size: 1rem;
+    text-decoration: none;
 }
 
-.title button:hover {
+.admin button:hover {
     background-color: #333333;
 }
 
 
-/* ------------ Modal ------------ */
-
-.modal {
-    display: none; /* Oculto por defecto */
-    position: fixed;
-    z-index: 1000; /* Aparece sobre el contenido */
-    padding-top: 5rem;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto; /* Permite desplazarse si el contenido es grande */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
-}
-
-.modal-content {
-    margin: auto;
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    animation: zoomIn 0.3s ease; /* Animación de zoom */
-}
-
-/* Animación de zoom */
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-#caption {
-    margin: 15px auto;
-    text-align: center;
-    color: white;
-    font-size: 1.2rem;
-    font-family: "Exo 2", sans-serif;
-}
-
-/* Botón de cerrar */
-.close {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close:hover {
-    color: #ccc;
-}
-
-
-/* ------------ Gallery ------------ */
+/* -------------------------------------------GALLERY--------------------------------------------------- */
 
 .row {
     display: flex;
@@ -169,5 +115,113 @@ body {
     .column {
         flex: 1 1 100%; /* Ocupa todo el ancho en pantallas pequeñas */
     }
+}
+
+
+/* -------------------------------------------MODALES--------------------------------------------------- */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000; /* Aparece sobre el contenido */
+    padding-top: 5rem;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Permite desplazarse si el contenido es grande */
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente */
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close:hover {
+    color: #ccc;
+}
+
+
+/* ------------ Modal vista de imagenes------------ */
+
+.modal-img {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease; /* Animación de zoom */
+}
+
+#caption {
+    margin: 15px auto;
+    text-align: center;
+    color: white;
+    font-size: 1.2rem;
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Animación de zoom */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ------------ Modal insercion de imagenes------------ */
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% desde la parte superior y centrado */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo del modal */
+    border-radius: 10px;
+}
+
+.modal-content h2 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content form {
+    font-family: var(--text-font);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.modal-content form button {
+    background-color: #1f1f1f;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--text-font);
+    font-size: 1rem;
+}
+
+.modal-content form button:hover {
+    background-color: #333333;
 }
  

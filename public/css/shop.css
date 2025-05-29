@@ -6,6 +6,9 @@ body {
     padding-top: 5rem;
 }
 
+
+/* -------------------------------------------CONTENT--------------------------------------------------- */
+
 .content {
     background-color: #fafafa;
     width: 80%;
@@ -13,9 +16,11 @@ body {
     margin: 2rem auto;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    min-height: 85vh;
 }
 
-/* ------------------------------ TITLE ------------------------------ */
+
+/* ------------ Title ------------ */
 
 .title {
     display: flex;

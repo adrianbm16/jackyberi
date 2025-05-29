@@ -17,6 +17,18 @@
             </div>
         </div>
 
+        <!-- Articulos de la tienda -->
+        <div class="items">
+            @foreach ($items as $item)
+                <x-shop-item
+                    :name="$item->name" 
+                    :price="$item->price" 
+                    :description="$item->description" 
+                    :image="$item->image" 
+                />
+            @endforeach
+        </div>
+
         <!-- Modal para abrir cada item-->
         <div id="itemModal" class="modal">
             <span class="close">&times;</span>
@@ -29,18 +41,6 @@
                     <button class="buy-button">Buy</button>
                 </div>
             </div>
-        </div>
-
-        <!-- Articulos de la tienda -->
-        <div class="items">
-            @foreach ($items as $item)
-                <x-shop-item
-                    :name="$item->name" 
-                    :price="$item->price" 
-                    :description="$item->description" 
-                    :image="$item->image" 
-                />
-            @endforeach
         </div>
 
     </div>

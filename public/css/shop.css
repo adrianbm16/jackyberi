@@ -1,7 +1,6 @@
 
 body {
-    background-image: url('../images/shop1.jpg');
-    background-image: url('../images/shop2.jpg');
+    background-image: url('../images/backgrounds/shop.jpg');
     background-size: cover;
     background-attachment: fixed;
     padding-top: 5rem;

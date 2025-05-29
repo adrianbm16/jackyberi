@@ -15,7 +15,7 @@ header.scrolled {
 /* -------------------------------------------------------- HERO -------------------------------------------------------------- */
 
 .hero {
-    background-image: url('../images/backgrounds/hero.jpg');
+    background-image: url('../images/home/hero.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;

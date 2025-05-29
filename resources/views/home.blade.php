@@ -18,7 +18,7 @@
 
             <!-- Contenido principal -->
             <div class="about-container">
-                <img src="{{ asset('images/retrato.jpg') }}" alt="Logo">
+                <img src="{{ asset('images/home/retrato.jpg') }}" alt="Logo">
                 <div class="about-text">
                     <h2>Jacky Bernal</h2>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nulla eius placeat vel molestias odio, eos atque blanditiis neque modi ipsum libero inventore dolores consectetur adipisicing elit.</p>

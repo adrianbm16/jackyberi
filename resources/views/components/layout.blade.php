@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{ $title ?? 'jackyberi' }} </title> <!-- Titulo de la pagina -->
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}"> <!-- Icono de la pestaña -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo/logo.png') }}"> <!-- Icono de la pestaña -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"> <!-- Iconos de bootstrap -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}"> <!-- Estilos generales de la pagina -->
     {{ $styles ?? '' }} <!-- Estilos de la pagina aparte -->
@@ -15,7 +15,7 @@
 <body>
     <!-- Header -->
     <header>
-        <a href="/"><img class="logo" src="{{ asset('images/logo.png') }}" alt="Logo"></a> <!-- Logo de la pagina -->
+        <a href="/"><img class="logo" src="{{ asset('images/logo/logo.png') }}" alt="Logo"></a> <!-- Logo de la pagina -->
 
         <button class="abrir-menu" id="abrir"><i class="bi bi-list"></i></button> <!-- Boton para abrir el menu modo responsive -->
 
@@ -40,7 +40,7 @@
         <div class="mention"> <!-- Mencion a freepik -->
             <p>With the help of</p>
             <a href="https://freepik.es" target="_blank">
-                <img src="{{ asset('images/freepik logo.png') }}" alt="Freepik Logo">
+                <img src="{{ asset('images/logo/freepik.png') }}" alt="Freepik Logo">
             </a>
         </div>
 

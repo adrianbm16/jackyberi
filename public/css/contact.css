@@ -3,7 +3,7 @@
     background-image: url('../images/backgrounds/contact.jpg');
     background-position: center;
     background-size: cover;
-    height: calc(100vh - 39px);
+    min-height: calc(100vh - 39px);
     padding-top: 80px;
     display: flex;
     flex-direction: column;

@@ -13,44 +13,26 @@
             <h1>Gallery</h1>
             <div class="admin" id="admin">
                 <button class="add-image">Add image</button>
-                <button class="edit-image">Edit images</button>
+                <button class="edit-image" id="editImagesBtn">Edit images</button>
             </div>
         </div>
 
         <!-- Galeria de imagenes -->
         <div class="row">
-            <div class="column">
-                <!-- Imagenes de la base de datos de la columna 1 -->
-                @foreach ($images as $imagen)
-                    @if ($imagen->column == 1)
-                        <img class="gallery-img" src="{{ asset($imagen->path) }}" alt="{{ $imagen->name }}">
-                    @endif
-                @endforeach
-            </div>
-            <div class="column">
-                <!-- Imagenes de la base de datos de la columna 1 -->
-                @foreach ($images as $imagen)
-                    @if ($imagen->column == 2)
-                        <img class="gallery-img" src="{{ asset($imagen->path) }}" alt="{{ $imagen->name }}">
-                    @endif
-                @endforeach
-            </div>
-            <div class="column">
-                <!-- Imagenes de la base de datos de la columna 1 -->
-                @foreach ($images as $imagen)
-                    @if ($imagen->column == 3)
-                        <img class="gallery-img" src="{{ asset($imagen->path) }}" alt="{{ $imagen->name }}">
-                    @endif
-                @endforeach
-            </div>
-            <div class="column">
-                <!-- Imagenes de la base de datos de la columna 1 -->
-                @foreach ($images as $imagen)
-                    @if ($imagen->column == 4)
-                        <img class="gallery-img" src="{{ asset($imagen->path) }}" alt="{{ $imagen->name }}">
-                    @endif
-                @endforeach
-            </div>
+            @foreach (range(1, 4) as $col)
+                <div class="column">
+                    @foreach ($images->where('column', $col) as $image)
+                        <div class="image-container">
+                            <img class="gallery-img" src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                            <form action="{{ route('gallery.destroy', $image) }}" method="POST" class="delete-form">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="delete-btn">&times;</button>
+                            </form>
+                        </div>
+                    @endforeach
+                </div>
+            @endforeach
         </div>
 
         <!-- Modal para abrir cada imagen-->
@@ -89,11 +71,12 @@
                 </form>
             </div>
         </div>
-        
+
     </div>
 
     <script>
-        // Obtener elementos del modal
+        // ---------------------------- Obtener elementos del modal ---------------------------- //
+
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImg");
         const captionText = document.getElementById("caption");
@@ -121,17 +104,15 @@
         };
 
 
+        // ---------------------------- Modal para añadir imágenes ---------------------------- //
 
-
-
-        // Modal para añadir imágenes
         const addImageModal = document.getElementById("addImageModal");
         const closeAddImageModal = document.getElementById("closeAddImageModal");
         const columnInput = document.getElementById("columnInput");
 
         // Abrir el modal al hacer clic en un botón "Add image"
         document.querySelectorAll(".add-image").forEach(button => {
-            button.addEventListener("click", function (e) {
+            button.addEventListener("click", function(e) {
                 e.preventDefault();
                 const column = this.getAttribute("data-column");
                 columnInput.value = column; // Establecer el valor de la columna
@@ -145,10 +126,22 @@
         });
 
         // Cerrar el modal al hacer clic fuera del contenido
-        window.addEventListener("click", function (e) {
+        window.addEventListener("click", function(e) {
             if (e.target === addImageModal) {
                 addImageModal.style.display = "none";
             }
+        });
+
+
+        // ---------------------------- Botón para alternar el modo edición ---------------------------- //
+ 
+        const editImagesBtn = document.getElementById("editImagesBtn");
+
+        // Alternar visibilidad de los botones de eliminación
+        editImagesBtn.addEventListener("click", () => {
+            document.querySelectorAll(".delete-btn").forEach(button => {
+                button.classList.toggle("visible"); // Alternar la clase "visible"
+            });
         });
     </script>
 

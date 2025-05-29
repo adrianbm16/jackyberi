@@ -9,17 +9,22 @@ class GalleryController extends Controller
 {
     public function index(Request $request)
     {
-        $images = Image::orderBy('column')->get(); // Obtener imágenes ordenadas por columna
+        $images = Image::orderBy('column')->orderBy('created_at', 'desc')->get(); // Obtener imágenes ordenadas por columna
         return view('gallery', compact('images'));
     }
 
     public function store(Request $request)
     {
-        $imageUrl = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('images/gallery'), $imageUrl);
-        // *** Cambiar la ruta de donde se guarda la imagen a su respectiva columna y cambiar el nomobre de la imagen por el nombre mas la fecha y hora actual ***
-        
+        // Fecha y hora actual
+        $timestamp = now()->format('YmdHis'); // Formato: AñoMesDíaHoraMinutoSegundo
 
+        // Nombre completo de la imagen con extension
+        $imageUrl = "{$request->column}_{$request->name}_{$timestamp}." . $request->image->extension();
+
+        // Mover la imagen a la carpeta 'images/gallery' con el nuevo nombre
+        $request->image->move(public_path('images/gallery'), $imageUrl);
+
+        // Crear una nueva entrada en la base de datos
         Image::create([
             'name' => $request->name,
             'path' => 'images/gallery/' . $imageUrl,

@@ -10,7 +10,7 @@ class ShopController extends Controller
     public function index(Request $request)
     {
         $items = Item::all();
-        return view('shop', compact('items'));
+        return view('shop.index', compact('items'));
     }
 
     public function comprar($id)

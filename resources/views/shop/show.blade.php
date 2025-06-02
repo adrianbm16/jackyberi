@@ -1,9 +1,9 @@
 <x-layout>
     
-    <x-slot:title> Comprar </x-slot> <!-- Titulo de la pagina -->
+    <x-slot:title> {{ $item->name }} </x-slot> <!-- Titulo de la pagina -->
 
     <x-slot:styles> <!-- Estilos de la pagina -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/shop-comprar.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/shop/show.css') }}">
     </x-slot>
 
     <div class="content">
@@ -26,7 +26,7 @@
                     <p>{{ $item->description }}</p>
                     <div class="price-buy">
                         <p class="price">{{ $item->price }} €</p>
-                        <form action="{{ route('shop.comprar', $item) }}" method="POST">
+                        <form action="{{ route('shop.show', $item) }}" method="POST">
                             @csrf
                             <button type="submit" class="buy-button">Comprar</button>
                         </form>

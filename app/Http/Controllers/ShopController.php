@@ -13,9 +13,34 @@ class ShopController extends Controller
         return view('shop.index', compact('items'));
     }
 
-    public function comprar($id)
+    public function show($id)
     {
         $item = Item::findOrFail($id);
-        return view('shop.comprar', compact('item'));
+        return view('shop.show', compact('item'));
+    }
+
+    public function create()
+    {
+        return view('shop.create');
+    }
+
+    public function store(Request $request)
+    {
+        $timestamp = now()->format('YmdHis'); // Formato: AñoMesDíaHoraMinutoSegundo
+
+        // Nombre completo de la imagen con extension
+        $imageUrl = "{$request->name}_{$timestamp}." . $request->image->extension();
+
+        // Mover la imagen a la carpeta 'images/shop' con el nuevo nombre
+        $request->image->move(public_path('images/shop'), $imageUrl);
+
+        Item::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'image' => 'images/shop/' . $imageUrl,
+        ]);
+
+        return redirect()->route('shop.index')->with('success', 'Artículo creado correctamente.');
     }
 }

@@ -16,6 +16,9 @@ Route::get('/shop', [ShopController::class, 'index'])->name('shop.index'); // En
 Route::get('/shop/create', [ShopController::class, 'create'])->name('shop.create'); // Enrutamiento para la vista de creación de un artículo
 Route::post('/shop', [ShopController::class, 'store'])->name('shop.store'); // Enrutamiento para agregar un artículo a la tienda    
 Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.show'); // Enrutamiento para ver un artículo
+Route::get('/shop/{id}/edit', [ShopController::class, 'edit'])->name('shop.edit'); // Enrutamiento para editar un artículo
+Route::put('/shop/{id}', [ShopController::class, 'update'])->name('shop.update'); // Enrutamiento para actualizar un artículo
+Route::delete('/shop/{id}', [ShopController::class, 'destroy'])->name('shop.destroy'); // Enrutamiento para eliminar un artículo
 
 Route::post('/shop/{id}', [ShopController::class, 'enviarPedido'])->name('shop.enviarPedido'); // Enrutamiento para enviar el pedido de compra
 Route::get('/shop/gracias', function () {

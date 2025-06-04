@@ -41,12 +41,6 @@ body {
     margin: 0;
 }
 
-.admin {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .admin button {
     background-color: #1f1f1f;
     color: #ffffff;

@@ -13,12 +13,6 @@ class ShopController extends Controller
         return view('shop.index', compact('items'));
     }
 
-    public function show($id)
-    {
-        $item = Item::findOrFail($id);
-        return view('shop.show', compact('item'));
-    }
-
     public function create()
     {
         return view('shop.create');
@@ -53,11 +47,71 @@ class ShopController extends Controller
 
         Item::create([
             'name' => $request->name,
-            'description' => $request->description,
             'price' => $request->price,
+            'description' => $request->description,
             'image' => 'images/shop/' . $imageUrl,
         ]);
 
         return redirect()->route('shop.index')->with('success', 'Artículo creado correctamente.');
+    }
+
+    public function show($id)
+    {
+        $item = Item::findOrFail($id);
+        return view('shop.show', compact('item'));
+    }
+
+    public function edit($id)
+    {
+        $item = Item::findOrFail($id);
+        return view('shop.edit', compact('item'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $item = Item::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a valid string.',
+            'price.required' => 'The price field is required.',
+            'price.numeric' => 'The price must be a valid number.',
+            'description.required' => 'The description field is required.',
+            'image.required' => 'The image field is required.',
+            'image.image' => 'The file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg.',
+            'image.max' => 'The image must not be larger than 2MB.',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $timestamp = now()->format('YmdHis');
+            $imageUrl = "{$request->name}_{$timestamp}." . $request->image->extension();
+            $request->image->move(public_path('images/shop'), $imageUrl);
+            $item->image = 'images/shop/' . $imageUrl;
+        }
+
+        $item->name = $request->name;
+        $item->price = $request->price;
+        $item->description = $request->description;
+        $item->save();
+
+        return redirect()->route('shop.index')->with('success', 'Artículo actualizado correctamente.');
+    }
+
+    public function destroy($id)
+    {
+        $item = Item::findOrFail($id);
+
+        if (file_exists(public_path($item->image))) {
+            unlink(public_path($item->image)); // Eliminar archivo físico
+        }
+        $item->delete(); // Eliminar de la base de datos
+
+        return redirect()->route('shop.index')->with('success', 'Artículo eliminado correctamente.');
     }
 }

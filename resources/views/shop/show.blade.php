@@ -13,8 +13,12 @@
             <div class="links">
                 <a href="{{ route('shop.index') }}" class="back-link">Back to shop</a>
                 <div class="admin" id="admin">
-                    <button class="edit-image">Edit</button>
-                    <button class="delete-image">Delete</button>
+                    <a href="{{ route('shop.edit', $item) }}"><button class="edit-image">Edit</button></a>
+                    <form action="{{ route('shop.destroy', $item) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="delete-image">Delete</button>
+                    </form>
                 </div>
             </div>
 

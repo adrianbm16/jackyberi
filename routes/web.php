@@ -14,16 +14,16 @@ Route::delete('/gallery/{image}', [GalleryController::class, 'destroy'])->name('
 
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index'); // Enrutamiento para la vista de tienda
 Route::get('/shop/create', [ShopController::class, 'create'])->name('shop.create'); // Enrutamiento para la vista de creación de un artículo
-Route::post('/shop', [ShopController::class, 'store'])->name('shop.store'); // Enrutamiento para agregar un artículo a la tienda    
+Route::post('/shop', [ShopController::class, 'store'])->name('shop.store'); // Enrutamiento para agregar un artículo a la tienda
 Route::get('/shop/{id}', [ShopController::class, 'show'])->name('shop.show'); // Enrutamiento para ver un artículo
 Route::get('/shop/{id}/edit', [ShopController::class, 'edit'])->name('shop.edit'); // Enrutamiento para editar un artículo
 Route::put('/shop/{id}', [ShopController::class, 'update'])->name('shop.update'); // Enrutamiento para actualizar un artículo
 Route::delete('/shop/{id}', [ShopController::class, 'destroy'])->name('shop.destroy'); // Enrutamiento para eliminar un artículo
 
-Route::post('/shop/{id}', [ShopController::class, 'enviarPedido'])->name('shop.enviarPedido'); // Enrutamiento para enviar el pedido de compra
-Route::get('/shop/gracias', function () {
-    return view('shop.gracias'); // Vista de agradecimiento después de la compra
-});
+// Route::post('/shop/{id}', [ShopController::class, 'enviarPedido'])->name('shop.enviarPedido'); // Enrutamiento para enviar el pedido de compra
+// Route::get('/shop/gracias', function () {
+//     return view('shop.gracias'); // Vista de agradecimiento después de la compra
+// });
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index'); // Enrutamiento para la vista de contacto
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); // Enrutamiento para el formulario de contacto

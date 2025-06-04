@@ -1,5 +1,5 @@
 <x-layout>
-    
+
     <x-slot:title> Home </x-slot> <!-- Titulo de la pagina -->
 
     <x-slot:styles> <!-- Estilos de la pagina -->
@@ -21,13 +21,36 @@
                 <img src="{{ asset('images/home/retrato.jpg') }}" alt="Logo">
                 <div class="about-text">
                     <h2>Jacky Bernal</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod nulla eius placeat vel molestias odio, eos atque blanditiis neque modi ipsum libero inventore dolores consectetur adipisicing elit.</p>
+                    <p>Jacky Bernal is a painter from Belgium. He studied art in Algeciras, Spain. His paintings are full of color and emotion. Jacky’s work is inspired by different cultures, nature, and everyday life. Each piece tells a unique story.</p>
+                </div>
+            </div>
+
+            <!-- Contenido secundario -->
+            <div class="slider-container">
+                <h2 class="slider-title">Last creations</h2>
+                <div class="slider">
+                    <div class="slide-track">
+                        
+                        <!-- Slider de imagenes -->
+                        @foreach ($images as $image)
+                            <div class="slide">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                            </div>
+                        @endforeach
+                        
+                        <!-- Repetir las imagenes para el efecto de slider -->
+                        @foreach ($images as $image)
+                            <div class="slide">
+                                <img src="{{ asset($image->path) }}" alt="{{ $image->name }}">
+                            </div>
+                        @endforeach
+
+                    </div>
                 </div>
             </div>
 
         </div>
-        
+
     </div>
 
 </x-layout>
-

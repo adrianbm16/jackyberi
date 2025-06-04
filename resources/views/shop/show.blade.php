@@ -19,8 +19,8 @@
             </div>
 
             <div class="item-details">
-                {{-- <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"> --}}
-                <img src="{{ asset('images/home/hero.jpg') }}" alt="{{ $item->name }}">
+                <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+                {{-- <img src="{{ asset('images/home/hero.jpg') }}" alt="{{ $item->name }}"> --}}
                 <div class="item-info">
                     <h2>{{ $item->name }}</h2>
                     <p>{{ $item->description }}</p>
@@ -28,7 +28,7 @@
                         <p class="price">{{ $item->price }} €</p>
                         <form action="{{ route('shop.show', $item) }}" method="POST">
                             @csrf
-                            <button type="submit" class="buy-button">Comprar</button>
+                            <button type="submit" class="buy-button">Buy</button>
                         </form>
                     </div>
                 </div>

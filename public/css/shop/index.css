@@ -96,6 +96,8 @@ body {
     height: auto;
     border-radius: 5px;
     margin-bottom: 0.5rem;
+    height: 300px; /* Altura fija para las imágenes */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
 }
 
 .shop-item h4 {

@@ -13,7 +13,6 @@
             <h1>Shop</h1>
             <div class="admin" id="admin">
                 <a href="{{ route('shop.create') }}"><button class="add-image">Add item</button></a>
-                
             </div>
         </div>
 
@@ -22,8 +21,8 @@
             @foreach ($items as $item)
                 <a href="{{ route('shop.show', $item) }}">
                     <div class="shop-item" >
-                         <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
-                        {{--<img src="{{ asset('images/home/hero.jpg') }}" alt="{{ $item->name }}"> --}}
+                        {{-- <img src="{{ asset('images/home/hero.jpg') }}" alt="{{ $item->name }}"> --}}
+                        <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
                         <div class="item-text">
                             <h4>{{ $item->name }}</h4>
                             <p>{{ $item->price }} €</p>

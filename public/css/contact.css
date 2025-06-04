@@ -149,5 +149,6 @@ textarea:focus::placeholder {
     font-family: var(--text-font);
     font-size: 1rem;
     position: absolute;
+    color: red;
     bottom: 0;
 }

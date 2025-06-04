@@ -12,10 +12,6 @@
 
             <div class="links">
                 <a href="{{ route('shop.index') }}" class="back-link">Back to shop</a>
-                <div class="admin" id="admin">
-                    <button class="edit-image">Edit</button>
-                    <button class="delete-image">Delete</button>
-                </div>
             </div>
 
             <form action="{{ route('shop.store') }}" method="POST" enctype="multipart/form-data">

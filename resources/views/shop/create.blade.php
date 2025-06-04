@@ -19,20 +19,38 @@
             </div>
 
             <form action="{{ route('shop.store') }}" method="POST" enctype="multipart/form-data">
+
                 @csrf
+
                 <div class="form-group">
-                    <input type="text" placeholder="Name" name="name" id="name" class="form-control" required>
+                    <input type="text" placeholder="Name" name="name" id="name" class="form-inputs">
+                    @error('name')
+                        <div class="error"> <p>{{ $message }}</p> </div>
+                    @enderror
                 </div>
+
                 <div class="form-group">
-                    <textarea placeholder="Description" name="description" id="description" class="form-control" rows="4" required></textarea>
+                    <input type="number" placeholder="Price" name="price" id="price" class="form-inputs" step="0.01">
+                    @error('price')
+                        <div class="error"> <p>{{ $message }}</p> </div>
+                    @enderror
                 </div>
+
                 <div class="form-group">
-                    <input type="number" placeholder="Price" name="price" id="price" class="form-control" step="0.01" required>
+                    <textarea placeholder="description" name="description" id="description" class="form-inputs" rows="4"></textarea>
+                    @error('description')
+                        <div class="error"> <p>{{ $message }}</p> </div>
+                    @enderror
                 </div>
+
                 <div class="form-group">
-                    <input type="file" name="image" id="image" class="form-control" required>
+                    <input type="file" name="image" id="image" class="form-inputs">
+                    @error('image')
+                        <div class="error"> <p>{{ $message }}</p> </div>
+                    @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">Save</button>
+
+                <button type="submit" class="submit-btn">Save</button>
             </form>
 
         </div>

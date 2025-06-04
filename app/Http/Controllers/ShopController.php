@@ -26,6 +26,23 @@ class ShopController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|numeric|min:0',
+            'description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ], [
+            'name.required' => 'The name field is required.',
+            'name.string' => 'The name must be a valid string.',
+            'price.required' => 'The price field is required.',
+            'price.numeric' => 'The price must be a valid number.',
+            'description.required' => 'The description field is required.',
+            'image.required' => 'The image field is required.',
+            'image.image' => 'The file must be an image.',
+            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg.',
+            'image.max' => 'The image must not be larger than 2MB.',
+        ]);
+
         $timestamp = now()->format('YmdHis'); // Formato: AñoMesDíaHoraMinutoSegundo
 
         // Nombre completo de la imagen con extension

@@ -19,21 +19,21 @@
                 @csrf
 
                 <div class="form-group">
-                    <input type="text" placeholder="Name" name="name" id="name" class="form-inputs">
+                    <input type="text" placeholder="Name" name="name" id="name" class="form-inputs" value="{{ old('name') }}">
                     @error('name')
                         <div class="error"> <p>{{ $message }}</p> </div>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    <input type="number" placeholder="Price" name="price" id="price" class="form-inputs" step="0.01">
+                    <input type="number" placeholder="Price" name="price" id="price" class="form-inputs" step="0.01" value="{{ old('price') }}">
                     @error('price')
                         <div class="error"> <p>{{ $message }}</p> </div>
                     @enderror
                 </div>
 
                 <div class="form-group">
-                    <textarea placeholder="description" name="description" id="description" class="form-inputs" rows="4"></textarea>
+                    <textarea placeholder="description" name="description" id="description" class="form-inputs" rows="4" value="{{ old('description') }}"></textarea>
                     @error('description')
                         <div class="error"> <p>{{ $message }}</p> </div>
                     @enderror

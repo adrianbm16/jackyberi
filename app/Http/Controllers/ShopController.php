@@ -24,7 +24,7 @@ class ShopController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:4096', // Máximo 4MB
         ], [
             'name.required' => 'The name field is required.',
             'name.string' => 'The name must be a valid string.',
@@ -34,7 +34,7 @@ class ShopController extends Controller
             'image.required' => 'The image field is required.',
             'image.image' => 'The file must be an image.',
             'image.mimes' => 'The image must be a file of type: jpeg, png, jpg.',
-            'image.max' => 'The image must not be larger than 2MB.',
+            'image.max' => 'The image must not be larger than 4MB.',
         ]);
 
         $timestamp = now()->format('YmdHis'); // Formato: AñoMesDíaHoraMinutoSegundo
@@ -75,7 +75,7 @@ class ShopController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:4096',
         ], [
             'name.required' => 'The name field is required.',
             'name.string' => 'The name must be a valid string.',
@@ -85,7 +85,7 @@ class ShopController extends Controller
             'image.required' => 'The image field is required.',
             'image.image' => 'The file must be an image.',
             'image.mimes' => 'The image must be a file of type: jpeg, png, jpg.',
-            'image.max' => 'The image must not be larger than 2MB.',
+            'image.max' => 'The image must not be larger than 4MB.',
         ]);
 
         if ($request->hasFile('image')) {

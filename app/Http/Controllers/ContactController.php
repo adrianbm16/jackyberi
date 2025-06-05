@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view('contact'); // Retorna la vista de contacto
     }

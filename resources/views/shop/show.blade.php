@@ -30,7 +30,7 @@
                     <p>{{ $item->description }}</p>
                     <div class="price-buy">
                         <p class="price">{{ $item->price }} €</p>
-                        <form action="{{ route('shop.show', $item) }}" method="POST">
+                        <form action="{{ route('shop.buy', $item->id) }}" method="GET">
                             @csrf
                             <button type="submit" class="buy-button">Buy</button>
                         </form>

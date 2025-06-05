@@ -20,10 +20,9 @@ Route::get('/shop/{id}/edit', [ShopController::class, 'edit'])->name('shop.edit'
 Route::put('/shop/{id}', [ShopController::class, 'update'])->name('shop.update'); // Enrutamiento para actualizar un artículo
 Route::delete('/shop/{id}', [ShopController::class, 'destroy'])->name('shop.destroy'); // Enrutamiento para eliminar un artículo
 
-// Route::post('/shop/{id}', [ShopController::class, 'enviarPedido'])->name('shop.enviarPedido'); // Enrutamiento para enviar el pedido de compra
-// Route::get('/shop/gracias', function () {
-//     return view('shop.gracias'); // Vista de agradecimiento después de la compra
-// });
+Route::get('/shop/{id}/buy', [ShopController::class, 'buy'])->name('shop.buy'); // Enrutamiento para enviar el pedido de compra
+Route::post('/shop/{id}/buy', [ShopController::class, 'send'])->name('shop.send'); // Enrutamiento para enviar el pedido de compra
+Route::get('/shop/thanks', [ShopController::class, 'thanks'])->name('shop.thanks'); // Enrutamiento para la vista de agradecimiento después de la compra
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index'); // Enrutamiento para la vista de contacto
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); // Enrutamiento para el formulario de contacto

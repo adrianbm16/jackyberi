@@ -114,4 +114,35 @@ class ShopController extends Controller
 
         return redirect()->route('shop.index')->with('success', 'Artículo eliminado correctamente.');
     }
+
+    public function buy($id)
+    {
+        $item = Item::findOrFail($id);
+        return view('shop.send', compact('item'));
+    }
+
+    public function send(Request $request, $id)
+    {
+        $item = Item::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'address' => 'required|string|max:255',
+            'phone' => 'required|string|max:20',
+        ], [
+            'name.required' => 'The name field is required.',
+            'email.required' => 'The email field is required.',
+            'email.email' => 'The email must be a valid email address.',
+            'address.required' => 'The address field is required.',
+            'phone.required' => 'The phone field is required.',
+        ]);
+
+        return redirect()->route('shop.thanks');
+    }
+
+    public function thanks()
+    {
+        return view('shop.thanks'); // Vista de agradecimiento después de la compra
+    }
 }

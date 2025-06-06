@@ -13,10 +13,10 @@
             <h1 class="title">Jackyberi</h1>
         </div>
 
-        <!-- Main content -->
+        <!-- Contenido -->
         <div class="about">
 
-            <!-- Contenido principal -->
+            <!-- About -->
             <div class="about-container">
                 <img src="{{ asset('images/home/retrato.jpg') }}" alt="Logo">
                 <div class="about-text">
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <!-- Contenido secundario -->
+            <!-- Slider -->
             <div class="slider-container">
                 <h2 class="slider-title">Last creations</h2>
                 <div class="slider">
@@ -47,6 +47,12 @@
 
                     </div>
                 </div>
+            </div>
+
+            <!-- Biografia -->
+            <div class="biography-container">
+                <h2>Biography</h2>
+                <p>Jacky Bernal is a Belgian painter known for his expressive and colorful style. He studied fine arts in Algeciras, Spain, where the vibrant culture and light deeply influenced his work. Jacky's paintings often explore themes of identity, movement, and everyday life, blending European and Mediterranean inspirations. His art captures emotion through bold brushstrokes and rich textures. Each piece invites the viewer to reflect and connect with a personal or cultural story. With exhibitions in both Belgium and Spain, Jacky continues to grow as an international artist, sharing his unique vision and passion for painting with a wider audience.</p>
             </div>
 
         </div>

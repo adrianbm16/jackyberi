@@ -150,6 +150,7 @@ footer {
 .mention {
     display: flex;
     align-items: center;
+    margin-right: 150px;
 }
 
 .mention a {
@@ -158,8 +159,8 @@ footer {
 
 .mention img{
     height: 0.8rem;
-    filter: grayscale(100%) brightness(0) sepia(1) hue-rotate(200deg) saturate(5) contrast(1.2);
-    transition: filter 0.3s ease-in-out;
+    filter: contrast(0) brightness(150%);
+    transition: filter 0.3s ease;
 }
 
 .mention img:hover {
@@ -177,9 +178,13 @@ footer div a {
     cursor: pointer;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
     footer {
         flex-direction: column;
         gap: 5px;
     }
+    
+    .mention {
+    margin-right: 0;
+}
 }

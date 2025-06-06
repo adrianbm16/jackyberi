@@ -65,14 +65,14 @@ header.scrolled {
 }
 
 .about-container img {
-    height: 400px;
+    height: 350px;
     border-radius: 10px;
 }
 
 .about-text {
     font-family: var(--text-font);
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,6 +114,7 @@ header.scrolled {
     word-spacing: 5px;
     text-transform: uppercase;
     text-align: center;
+    margin-top: 40px;
 }
 
 .slider {
@@ -181,4 +182,30 @@ header.scrolled {
     right: 0;
     top: 0;
     transform: rotateY(180deg);
+}
+
+/* -------------------------------------------------------- BIOGRAFY -------------------------------------------------------------- */
+
+.biography-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.biography-container h2 {
+    font-family: var(--title-font);
+    font-size: 2rem;
+    font-weight: 800;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.biography-container p {
+    font-family: var(--text-font);
+    font-weight: 400;
+    font-size: 1.2rem;
+    text-align: justify;
+    width: 50%;
 }

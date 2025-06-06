@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ShopMailable;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Item;
 
 class ShopController extends Controller
@@ -169,11 +171,19 @@ class ShopController extends Controller
             'cardholder.max'       => 'The cardholder name may not be greater than 255 characters.',
         ]);
 
-        if (file_exists(public_path($item->image))) {
-            unlink(public_path($item->image)); // Eliminar archivo físico
-        }
-        $item->delete();
+        // Eliminar el artículo de la tienda
+        // if (file_exists(public_path($item->image))) {
+        //     unlink(public_path($item->image)); // Eliminar archivo físico
+        // }
+        // $item->delete();
+        
+        // Envío del correo electrónico
+        Mail::to('jackyberi67@gmail.com')
+            ->send(new ShopMailable($request->all(), $item));
 
+        session()->flash('success', 'Your message has been sent successfully!'); // Mensaje de éxito
+
+        // Redirigir a la página de agradecimiento
         return redirect()->route('shop.thanks');
     }
 

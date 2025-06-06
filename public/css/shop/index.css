@@ -61,7 +61,7 @@ body {
 
 .items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Diseño responsivo */
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* Diseño responsivo */
     gap: 1rem;
     padding: 1rem;
 }

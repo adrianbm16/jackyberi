@@ -22,7 +22,7 @@ Route::delete('/shop/{id}', [ShopController::class, 'destroy'])->name('shop.dest
 
 Route::get('/shop/{id}/buy', [ShopController::class, 'buy'])->name('shop.buy'); // Enrutamiento para enviar el pedido de compra
 Route::post('/shop/{id}/buy', [ShopController::class, 'send'])->name('shop.send'); // Enrutamiento para enviar el pedido de compra
-Route::get('/shop/thanks', [ShopController::class, 'thanks'])->name('shop.thanks'); // Enrutamiento para la vista de agradecimiento después de la compra
+Route::get('/shop/thanks/you', [ShopController::class, 'thanks'])->name('shop.thanks'); // Enrutamiento para la vista de agradecimiento después de la compra
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index'); // Enrutamiento para la vista de contacto
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); // Enrutamiento para el formulario de contacto

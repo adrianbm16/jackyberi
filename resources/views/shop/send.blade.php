@@ -19,10 +19,12 @@
 
                 @csrf
 
-                <div class="form-group">
+                <div class="image-group">
                     <p class="item-text">You are going to buy this:</p>
                     <img src="{{ asset($item->image) }}" alt="{{ $item->name }}" class="item-image">
                 </div>
+                
+                <div class="separator"></div> {{-- DATOS PERSONALES --}}
 
                 <div class="form-group">
                     <input type="text" placeholder="Name" name="name" id="name" class="form-inputs" value="{{ old('name') }}">
@@ -31,16 +33,20 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <input type="number" placeholder="Phone number" name="phone" id="phone" class="form-inputs" value="{{ old('phone') }}">
-                    @error('phone')
-                        <div class="error"> <p>{{ $message }}</p> </div>
-                    @enderror
+                <div class="flex-group">
+                    <div class="form-group">
+                        <input type="number" placeholder="Phone number" name="phone" id="phone" class="form-inputs" value="{{ old('phone') }}">
+                        @error('phone')
+                            <div class="error"> <p>{{ $message }}</p> </div>
+                        @enderror
+                    </div>
 
-                    <input type="text" placeholder="Email" name="email" id="email" class="form-inputs" value="{{ old('email') }}">
-                    @error('email')
-                        <div class="error"> <p>{{ $message }}</p> </div>
-                    @enderror
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" name="email" id="email" class="form-inputs" value="{{ old('email') }}">
+                        @error('email')
+                            <div class="error"> <p>{{ $message }}</p> </div>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="separator"></div> {{-- DATOS DE DIRECCION --}}
@@ -52,16 +58,20 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <input type="number" placeholder="Postal number" name="postal" id="postal" class="form-inputs" value="{{ old('postal') }}">
-                    @error('postal')
-                        <div class="error"> <p>{{ $message }}</p> </div>
-                    @enderror
+                <div class="flex-group">
+                    <div class="form-group">
+                        <input type="number" placeholder="Postal number" name="postal" id="postal" class="form-inputs" value="{{ old('postal') }}">
+                        @error('postal')
+                            <div class="error"> <p>{{ $message }}</p> </div>
+                        @enderror
+                    </div>
 
-                    <input type="text" placeholder="City" name="city" id="city" class="form-inputs" value="{{ old('city') }}">
-                    @error('city')
-                        <div class="error"> <p>{{ $message }}</p> </div>
-                    @enderror
+                    <div class="form-group">
+                        <input type="text" placeholder="City" name="city" id="city" class="form-inputs" value="{{ old('city') }}">
+                        @error('city')
+                            <div class="error"> <p>{{ $message }}</p> </div>
+                        @enderror
+                    </div>
                 </div>
 
                  <div class="separator"></div> {{-- DATOS BANCARIOS --}}
@@ -73,27 +83,28 @@
                     @enderror
                 </div>
 
-                <div class="form-group">
-                    <input type="number" placeholder="Postal number" name="postal" id="postal" class="form-inputs" value="{{ old('postal') }}">
-                    @error('postal')
-                        <div class="error"> <p>{{ $message }}</p> </div>
-                    @enderror
-
-                    <input type="text" placeholder="City" name="city" id="city" class="form-inputs" value="{{ old('city') }}">
-                    @error('city')
-                        <div class="error"> <p>{{ $message }}</p> </div>
-                    @enderror
+                <div class="flex-group">
+                    <div class="form-group">
+                        <input type="number" placeholder="Expiration date" name="expiration" id="expiration" class="form-inputs" value="{{ old('expiration') }}">
+                        @error('expiration')
+                            <div class="error"> <p>{{ $message }}</p> </div>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" placeholder="CVV" name="cvv" id="cvv" class="form-inputs" value="{{ old('cvv') }}">
+                        @error('cvv')
+                            <div class="error"> <p>{{ $message }}</p> </div>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" placeholder="Address" name="address" id="address" class="form-inputs" value="{{ old('address') }}">
-                    @error('address')
+                    <input type="text" placeholder="Cardholder's name" name="cardholder" id="cardholder" class="form-inputs" value="{{ old('cardholder') }}">
+                    @error('cardholder')
                         <div class="error"> <p>{{ $message }}</p> </div>
                     @enderror
                 </div>
-
-
-
 
                 <button type="submit" class="submit-btn">Buy</button>
             </form>

@@ -102,9 +102,12 @@ body {
     letter-spacing: 1px;
     overflow: auto;
     resize: none;
-    text-transform: uppercase;
     padding-left: 1rem;
     border-radius: 10px 10px 0 0;
+}
+
+.form-inputs::placeholder {
+    text-transform: uppercase;
 }
 
 .form-inputs:focus {
@@ -152,10 +155,7 @@ body {
 
 .form-group {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    width: 100%;
 }
 
 .error p {

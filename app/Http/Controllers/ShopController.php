@@ -21,20 +21,20 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:4096', // Máximo 4MB
+            'name'          => 'required|string|max:255',
+            'price'         => 'required|numeric|min:0',
+            'description'   => 'required|string',
+            'image'         => 'required|image|mimes:jpeg,png,jpg|max:4096', // Máximo 4MB
         ], [
-            'name.required' => 'The name field is required.',
-            'name.string' => 'The name must be a valid string.',
-            'price.required' => 'The price field is required.',
-            'price.numeric' => 'The price must be a valid number.',
-            'description.required' => 'The description field is required.',
-            'image.required' => 'The image field is required.',
-            'image.image' => 'The file must be an image.',
-            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg.',
-            'image.max' => 'The image must not be larger than 4MB.',
+            'name.required'         => 'The name field is required.',
+            'name.string'           => 'The name must be a valid string.',
+            'price.required'        => 'The price field is required.',
+            'price.numeric'         => 'The price must be a valid number.',
+            'description.required'  => 'The description field is required.',
+            'image.required'        => 'The image field is required.',
+            'image.image'           => 'The file must be an image.',
+            'image.mimes'           => 'The image must be a file of type: jpeg, png, jpg.',
+            'image.max'             => 'The image must not be larger than 4MB.',
         ]);
 
         $timestamp = now()->format('YmdHis'); // Formato: AñoMesDíaHoraMinutoSegundo
@@ -72,20 +72,19 @@ class ShopController extends Controller
         $item = Item::findOrFail($id);
 
         $request->validate([
-            'name' => 'required|string|max:255',
-            'price' => 'required|numeric|min:0',
-            'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:4096',
+            'name'          => 'required|string|max:255',
+            'price'         => 'required|numeric|min:0',
+            'description'   => 'required|string',
+            'image'         => 'image|mimes:jpeg,png,jpg|max:4096',
         ], [
-            'name.required' => 'The name field is required.',
-            'name.string' => 'The name must be a valid string.',
-            'price.required' => 'The price field is required.',
-            'price.numeric' => 'The price must be a valid number.',
-            'description.required' => 'The description field is required.',
-            'image.required' => 'The image field is required.',
-            'image.image' => 'The file must be an image.',
-            'image.mimes' => 'The image must be a file of type: jpeg, png, jpg.',
-            'image.max' => 'The image must not be larger than 4MB.',
+            'name.required'         => 'The name field is required.',
+            'name.string'           => 'The name must be a valid string.',
+            'price.required'        => 'The price field is required.',
+            'price.numeric'         => 'The price must be a valid number.',
+            'description.required'  => 'The description field is required.',
+            'image.image'           => 'The file must be an image.',
+            'image.mimes'           => 'The image must be a file of type: jpeg, png, jpg.',
+            'image.max'             => 'The image must not be larger than 4MB.',
         ]);
 
         if ($request->hasFile('image')) {
@@ -98,6 +97,7 @@ class ShopController extends Controller
         $item->name = $request->name;
         $item->price = $request->price;
         $item->description = $request->description;
+        
         $item->save();
 
         return redirect()->route('shop.index')->with('success', 'Artículo actualizado correctamente.');
@@ -126,17 +126,53 @@ class ShopController extends Controller
         $item = Item::findOrFail($id);
 
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
-            'address' => 'required|string|max:255',
-            'phone' => 'required|string|max:20',
+            // Datos personales
+            'name'        => 'required|string|max:255',
+            'phone'       => 'required|digits_between:7,15',
+            'email'       => 'required|email|max:255',
+
+            // Dirección
+            'address'     => 'required|string|max:255',
+            'postal'      => 'required|digits_between:4,10',
+            'city'        => 'required|string|max:100',
+
+            // Datos bancarios
+            'card'        => 'required|digits_between:13,19',
+            'expiration'  => 'required|digits:4', // MMYY o AAMM, puedes ajustar según formato
+            'cvv'         => 'required|digits_between:3,4',
+            'cardholder'  => 'required|string|max:255',
         ], [
-            'name.required' => 'The name field is required.',
-            'email.required' => 'The email field is required.',
-            'email.email' => 'The email must be a valid email address.',
-            'address.required' => 'The address field is required.',
-            'phone.required' => 'The phone field is required.',
+            'name.required'        => 'The name field is required.',
+            'name.string'          => 'The name must be a valid string.',
+            'name.max'             => 'The name may not be greater than 255 characters.',
+            'phone.required'       => 'The phone number is required.',
+            'phone.digits_between' => 'The phone number must be between 7 and 15 digits.',
+            'email.required'       => 'The email field is required.',
+            'email.email'          => 'The email must be a valid email address.',
+            'email.max'            => 'The email may not be greater than 255 characters.',
+            'address.required'     => 'The address field is required.',
+            'address.string'       => 'The address must be a valid string.',
+            'address.max'          => 'The address may not be greater than 255 characters.',
+            'postal.required'      => 'The postal code is required.',
+            'postal.digits_between' => 'The postal code must be between 4 and 10 digits.',
+            'city.required'        => 'The city field is required.',
+            'city.string'          => 'The city must be a valid string.',
+            'city.max'             => 'The city may not be greater than 100 characters.',
+            'card.required'        => 'The card number is required.',
+            'card.digits_between'  => 'The card number must be between 13 and 19 digits.',
+            'expiration.required'  => 'The expiration date is required.',
+            'expiration.digits'    => 'The expiration date must be 4 digits (MMYY).',
+            'cvv.required'         => 'The CVV is required.',
+            'cvv.digits_between'   => 'The CVV must be 3 or 4 digits.',
+            'cardholder.required'  => 'The cardholder name is required.',
+            'cardholder.string'    => 'The cardholder name must be a valid string.',
+            'cardholder.max'       => 'The cardholder name may not be greater than 255 characters.',
         ]);
+
+        if (file_exists(public_path($item->image))) {
+            unlink(public_path($item->image)); // Eliminar archivo físico
+        }
+        $item->delete();
 
         return redirect()->route('shop.thanks');
     }

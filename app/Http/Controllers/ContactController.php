@@ -38,6 +38,11 @@ class ContactController extends Controller
 
         session()->flash('success', 'Your message has been sent successfully!'); // Mensaje de éxito
 
-        return redirect()->route('contact.index'); // Redirige a la página de contacto
+        return redirect()->route('contact.thanks'); // Redirige a la página de agradecimiento
+    }
+
+    public function thanks()
+    {
+        return view('contact-thanks'); // Retorna la vista de agradecimiento
     }
 }

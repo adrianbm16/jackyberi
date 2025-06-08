@@ -31,3 +31,4 @@ Route::get('/shop/thanks/you', [ShopController::class, 'thanks'])->name('shop.th
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index'); // Enrutamiento para la vista de contacto
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store'); // Enrutamiento para el formulario de contacto
+Route::get('/contact/thanks', [ContactController::class, 'thanks'])->name('contact.thanks'); // Enrutamiento para la vista de agradecimiento después de enviar el formulario de contacto

@@ -17,6 +17,10 @@ class ShopController extends Controller
 
     public function create()
     {
+        if (!auth()->check()) {
+            return redirect()->route('login')->withErrors(['message' => 'You must be logged in to access this page.']);
+        }
+
         return view('shop.create');
     }
 
@@ -65,6 +69,10 @@ class ShopController extends Controller
 
     public function edit($id)
     {
+        if (!auth()->check()) {
+            return redirect()->route('login')->withErrors(['message' => 'You must be logged in to access this page.']);
+        }
+
         $item = Item::findOrFail($id);
         return view('shop.edit', compact('item'));
     }

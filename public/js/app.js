@@ -19,25 +19,6 @@ cerrar.addEventListener("click", () => {
 })
 
 
-/**
- * Este codigo activa y desactiva el menu de navegacion cuando el navegador es pequeño.
- * @param admin - E
- * @param login - El boton para abrir el menu de navegacion.
- */
-const admin = document.querySelectorAll("#admin");
-const login = document.querySelector("#login");
-
-login.addEventListener("click", () => {
-
-    admin.forEach(element => {
-        if (element.classList.contains("visible")) {
-            element.classList.remove("visible");
-        } else {
-            element.classList.add("visible");
-        }
-    });
-})
-
 // -------------------------------------------- HOME --------------------------------------------
 
 /**

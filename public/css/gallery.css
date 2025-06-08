@@ -41,7 +41,7 @@ body {
     margin: 0;
 }
 
-.admin button {
+.edit-buttons button {
     background-color: #1f1f1f;
     color: #ffffff;
     border: none;
@@ -54,7 +54,7 @@ body {
     text-decoration: none;
 }
 
-.admin button:hover {
+.edit-buttons button:hover {
     background-color: #333333;
 }
 
@@ -77,7 +77,7 @@ body {
     height: auto;
     margin-top: 1rem;
     border-radius: 3px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
 }
 
 .gallery-img:hover {

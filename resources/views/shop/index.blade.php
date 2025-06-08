@@ -11,9 +11,11 @@
         <!-- Titulo de la tienda y botones de edicion-->
         <div class="title">
             <h1>Shop</h1>
-            <div class="admin" id="admin">
-                <a href="{{ route('shop.create') }}"><button class="add-image">Add item</button></a>
-            </div>
+            @auth
+                <div class="edit-buttons">
+                    <a href="{{ route('shop.create') }}"><button class="add-image">Add item</button></a>
+                </div>
+            @endauth
         </div>
 
         <!-- Articulos de la tienda -->

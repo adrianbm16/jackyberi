@@ -11,10 +11,12 @@
         <!-- Titulo de la galeria y botones de edicion-->
         <div class="title">
             <h1>Gallery</h1>
-            <div class="admin" id="admin">
-                <button class="add-image">Add image</button>
-                <button class="edit-image" id="editImagesBtn">Edit images</button>
-            </div>
+            @auth
+                <div class="edit-buttons">
+                    <button class="add-image">Add image</button>
+                    <button class="edit-image" id="editImagesBtn">Edit images</button>
+                </div>
+            @endauth
         </div>
 
         <!-- Galeria de imagenes -->

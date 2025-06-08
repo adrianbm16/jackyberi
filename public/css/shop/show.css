@@ -41,7 +41,7 @@ body {
     font-size: 1.1rem;
     font-weight: bold;
     position: relative;
-    margin-bottom: auto;
+    margin-bottom: 25px;
 }
 
 /* Genera una linea debajo de cada enlace a otra pagina del nav */
@@ -58,6 +58,10 @@ body {
 
 .back-link:hover::after {
     width: 100%;
+}
+
+.edit-buttons {
+    display: flex;
 }
 
 .links button {

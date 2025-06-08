@@ -12,13 +12,15 @@
 
             <div class="links">
                 <a href="{{ route('shop.index') }}" class="back-link">Back to shop</a>
-                <div class="admin" id="admin">
-                    <form action="{{ route('shop.destroy', $item) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="delete-image">Delete</button>
-                    </form>
-                </div>
+                @auth
+                    <div class="edit-buttons">
+                        <form action="{{ route('shop.destroy', $item) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete-image">Delete</button>
+                        </form>
+                    </div>
+                @endauth
             </div>
 
             <form action="{{ route('shop.update', $item) }}" method="POST" enctype="multipart/form-data">

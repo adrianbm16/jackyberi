@@ -45,9 +45,8 @@
         </div>
 
         <div class="social-icons"> <!-- Iconos de las redes sociales -->
-            <a href="#" target="_blank"><i class="bi bi-youtube"></i></a>
             <a href="https://www.instagram.com/jacky.beri/" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a id="login"><i class="bi bi-person-circle"></i></a>
+            <a href="{{ route('login') }}" id="login"><i class="bi bi-person-circle"></i></a>
         </div>
     </footer>
 

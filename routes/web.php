@@ -5,8 +5,13 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\LoginController;
 
 Route::get('/', HomeController::class)->name('home'); // Enrutamiento para la vista de inicio
+
+Route::view('/login', "login")->name('login'); // Enrutamiento para la vista de inicio de sesión
+Route::post('/iniciar-sesion', [LoginController::class, 'login'])->name('iniciar-sesion'); // Enrutamiento para la vista de inicio de sesión
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout'); // Enrutamiento para cerrar sesión
 
 Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery'); // Enrutamiento para la vista de galería
 Route::post('/gallery', [GalleryController::class, 'store'])->name('gallery.store'); // Enrutamiento para el formulario de galería
